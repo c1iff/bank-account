@@ -37,7 +37,9 @@ Bank.prototype.getAcctNumbers = function() {
   var acctNumberList = [];
   this.accounts.forEach(function(acct) {
     acctNumberList.push(acct.acctNumber);
+    console.log(acct);
   })
+  return acctNumberList;
 }
 
 var wellBank = new Bank();
@@ -54,14 +56,18 @@ $(document).ready(function() {
 
     $(".balance-output").text(newAccount.balance);
 
-    console.log(wellBank.accounts);
+    var acctList = wellBank.getAcctNumbers();
+
+    console.log(acctList);
+      acctList.forEach(function(each){
+        $("#acct-select").append('<option>' + each + '</option>');
+      })
     event.preventDefault();
   });
 
   $("#money-action").submit(function(event) {
 
-
-    var userAcctNumber = parseInt($("#account-access").val());
+    var userAcctNumber = parseInt($("#acct-select").val());
     var userDeposit = parseFloat($("#deposit").val());
     var userWithdraw = parseFloat($("#withdraw").val());
     console.log(userAcctNumber, userDeposit, userWithdraw)
