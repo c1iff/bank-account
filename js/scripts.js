@@ -59,6 +59,11 @@ $(document).ready(function() {
     var acctList = wellBank.getAcctNumbers();
 
     console.log(acctList);
+
+      $("#acct-select option").each(function() {
+        $(this).remove();
+      });
+
       acctList.forEach(function(each){
         $("#acct-select").append('<option>' + each + '</option>');
       })
