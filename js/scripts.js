@@ -10,18 +10,21 @@ function Bank(account) {
 
 
 Bank.prototype.deposit = function(acctNumber, amount) {
-
   for (i = 0; i < this.accounts.length; i++) {
-    if (acctNumber === this.accounts[i].acctNumber)
-      console.log(this.accounts[i].customerName)
-      //this.account[i].balance
+    if (acctNumber === this.accounts[i].acctNumber){
+      this.accounts[i].balance += amount;
+      return this.accounts[i].balance;
+    }
+  };
+}
+
+Bank.prototype.withdraw = function(acctNumber, amount) {
+  for (var i = 0; i < this.accounts.length; i++) {
+    if (acctNumber === this.accounts[i].acctNumber){
+      this.accounts[i].balance -= amount;
+      return this.accounts[i].balance;
+    }
   }
-
-  //account[index].balance += amount;
-};
-
-Bank.prototype.withdraw = function (amount) {
-  this.balance -= amount;
 };
 
 var wellBank = new Bank();
@@ -34,24 +37,31 @@ $(document).ready(function() {
     var userAcctNumber = parseInt($("#account-number").val());
 
     var newAccount = new Account(userName, userDeposit, userAcctNumber);
-
-
-
     wellBank.accounts.push(newAccount);
 
+    $(".balance-output").text(newAccount.balance);
+
     console.log(wellBank.accounts);
-
-
     event.preventDefault();
-  })
+  });
+
   $("#money-action").submit(function(event) {
 
 
     var userAcctNumber = parseInt($("#account-access").val());
     var userDeposit = parseInt($("#deposit").val());
+    var userWithdraw = parseInt($("#withdraw").val());
+    console.log(userAcctNumber, userDeposit, userWithdraw)
+    if(userDeposit){
+      var ouputBal = wellBank.deposit(userAcctNumber, userDeposit);
+      $(".balance-output").text(ouputBal);
+    }
 
-    wellBank.deposit(userAcctNumber, userDeposit);
-
+    if(userWithdraw){
+      var ouputBal = wellBank.withdraw(userAcctNumber, userWithdraw)
+      $(".balance-output").text(ouputBal);
+    }
+    console.log(wellBank.accounts);
 
     event.preventDefault();
   })
