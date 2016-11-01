@@ -33,6 +33,13 @@ Bank.prototype.withdraw = function(acctNumber, amount) {
   }
 };
 
+Bank.prototype.getAcctNumbers = function() {
+  var acctNumberList = [];
+  this.accounts.forEach(function(acct) {
+    acctNumberList.push(acct.acctNumber);
+  })
+}
+
 var wellBank = new Bank();
 
 $(document).ready(function() {
