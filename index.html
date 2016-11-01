@@ -3,13 +3,14 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/scripts.js"></script>
     <title>Bank Account</title>
   </head>
   <body>
     <div class="container">
-      <div class="page-header" id="head"><h1>Well Shucks Bank<small> There for you when we need to be</small></h1></div><img src="img/logo.jpg" alt="logo" />
+      <div class="page-header" id="head"><h1>Hell's Cargo Bank<small><br> We'll open a new account for you, even after you're dead</small></h1></div><img src="img/logo.jpg" alt="logo" />
       <div class="row">
         <div class="col-md-6">
           <h2>Make an Account</h2>
@@ -20,7 +21,7 @@
             </div>
             <div class="form-group">
               <label for="initial-deposit">Initial Deposit</label>
-              <input type="text" class="form-control" id="initial-deposit">
+              <input type="number" class="form-control" id="initial-deposit" step="0.01" placeholder="$">
             </div>
             <div class="form-group">
               <label for="initial-deposit">Enter an Account Number:</label>
@@ -38,11 +39,11 @@
             </div>
             <div class="form-group">
               <label for="deposit">Deposit Amount</label>
-              <input type="text" class="form-control" id="deposit">
+              <input type="text" class="form-control" id="deposit" placeholder="$">
             </div>
             <div class="form-group">
               <label for="withdraw">Withdraw Amount</label>
-              <input type="text" class="form-control" id="withdraw">
+              <input type="text" class="form-control" id="withdraw" placeholder="$">
             </div>
             <button type="submit" class="btn-primary btn">Submit</button>
           </form>
@@ -51,9 +52,9 @@
       <div class="row">
         <div class="col-md-12"><br>
           <div class="panel panel-default">
-            <div class="panel-heading">Balance</div>
+            <div class="panel-heading"><h3>Balance</h3></div>
             <div class="panel-body balance">
-              <h2>Your balance is : $<span class = "balance-output"></span></h2>
+              <h3>Your balance is : $<span class = "balance-output"></span></h3>
             </div>
           </div>
         </div>

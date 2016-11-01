@@ -39,7 +39,7 @@ $(document).ready(function() {
   $("#new-account").submit(function(event) {
 
     var userName = $("#new-name").val();
-    var userDeposit = parseInt($("#initial-deposit").val());
+    var userDeposit = parseFloat($("#initial-deposit").val());
     var userAcctNumber = parseInt($("#account-number").val());
 
     var newAccount = new Account(userName, userDeposit, userAcctNumber);
@@ -55,8 +55,8 @@ $(document).ready(function() {
 
 
     var userAcctNumber = parseInt($("#account-access").val());
-    var userDeposit = parseInt($("#deposit").val());
-    var userWithdraw = parseInt($("#withdraw").val());
+    var userDeposit = parseFloat($("#deposit").val());
+    var userWithdraw = parseFloat($("#withdraw").val());
     console.log(userAcctNumber, userDeposit, userWithdraw)
     if(userDeposit){
       var ouputBal = wellBank.deposit(userAcctNumber, userDeposit);

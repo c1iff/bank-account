@@ -11,3 +11,12 @@ img {
   margin-top: 15px;
   width: 25%;
 }
+
+.panel {
+  text-align: center;
+}
+
+body {
+  font-family: 'Bitter', serif;
+  background-color: rgba(255, 0, 0, 0.4);
+}
