@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header" id="head"><h1>Well Shucks Bank<small> There for you when we need to be</small></h1></div><img src="img/logo.jpg" alt="logo" />
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Make an Account</h2>
+          <form id="new-account">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="new-name">
+            </div>
+            <div class="form-group">
+              <label for="initial-deposit">Initial Deposit</label>
+              <input type="text" class="form-control" id="initial-deposit">
+            </div>
+            <div class="form-group">
+              <label for="initial-deposit">Enter an Account Number:</label>
+              <input type="text" class="form-control" id="account-number">
+            </div>
+            <button type="submit" class="btn-primary btn">Creat Account</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2>Deposit or Withdaw</h2>
+          <form id="money-action">
+            <div class="form-group">
+              <label for="initial-deposit">Enter an Account Number:</label>
+              <input type="text" class="form-control" id="account-access">
+            </div>
+            <div class="form-group">
+              <label for="deposit">Deposit Amount</label>
+              <input type="text" class="form-control" id="deposit">
+            </div>
+            <div class="form-group">
+              <label for="withdraw">Withdraw Amount</label>
+              <input type="text" class="form-control" id="withdraw">
+            </div>
+            <button type="submit" class="btn-primary btn">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><br>
+          <div class="panel panel-default">
+            <div class="panel-heading">Balance</div>
+            <div class="panel-body balance">
+              <h2>Your balance is : <span class = "balance-output"></span>$</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
